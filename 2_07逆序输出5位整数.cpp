@@ -1,21 +1,26 @@
-#include <iostream>
-#include <string> // 引入string库来处理字符串
+#include <iostream> // 包含标准输入输出流库，用于输入输出操作。
+#include <string>   // 包含字符串库，提供字符串相关的功能。
 
 int main() {
-    std::string num;
+    std::string num; // 声明一个 std::string 类型的变量 num，用来存储输入的数字。
+
     // 读取五位正整数
-    std::cin >> num;
+    std::cin >> num; // 使用标准输入流 std::cin 读取用户输入的数据，并将其存储到字符串 num 中。
 
     // 检查输入数字是否符合条件（末位不为0，且为五位数）
-    if (num.length() == 5 && num[4] != '0') {
+    if (num.length() == 5 && num[4] != '0') { // 使用条件语句检查 num 的长度是否为5，且最后一位（索引为4）是否不为 '0'。
         // 逆序输出数字
-        for (int i = num.length() - 1; i >= 0; --i) {
-            std::cout << num[i];
+        for (int i = num.length() - 1; i >= 0; --i) { // 使用 for 循环逆序遍历字符串 num，从最后一个字符开始到第一个字符结束。
+
+        //for (int i = 5 - 1;        i >= 0;      --i) {
+        //     12345
+            std::cout << num[i]; // 使用标准输出流 std::cout 输出当前字符，逆序输出 num 中的每个数字。
         }
-        std::cout << std::endl;
+        std::cout << std::endl; // 在所有数字输出完成后，输出一个换行符，以保持输出格式整洁。
     } else {
-        std::cout << "输入的数字必须是末位不为0的五位正整数" << std::endl;
+        // 如果输入的数字不满足条件，则输出错误信息
+        std::cout << "输入的数字必须是末位不为0的五位正整数" << std::endl; // 使用 std::cout 输出错误信息，告知用户输入的数字不符合要求。
     }
 
-    return 0;
+    return 0; // 程序正常结束，返回0表示成功结束。
 }
